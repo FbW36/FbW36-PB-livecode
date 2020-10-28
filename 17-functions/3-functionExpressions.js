@@ -12,21 +12,33 @@
 // A function can be perceived as an action.
 // We can pass it between variables and run when we want.
 
-// 1.
+// 1. create function with function keyword
+function greeting() {
+  return "Good morning";
+}
+
+console.log("greeting() ==> ", greeting()); // Good morning
 
 // ---------##---------
-// 2.
+// 2. create function with let/const/var keyword
+
+const greeting2 = function () {
+  return "Good evening";
+};
+
+console.log("greeting2() ==> ", greeting2()); // Good evening
 
 // ---------##---------
-// 3.
+console.log("greeting3() ==> ", greeting3());
+function greeting3() {
+  return "Good morning greeting3";
+}
 
-// ---------##---------
-// 4.
+//console.log("greeting4() ==> ", greeting4());
 
-// ---------##---------
-// 5.
-
-// ---------##---------
+const greeting4 = function () {
+  return "Good evening from greeting4";
+};
 
 // Function Declaration vs Function Expression
 
