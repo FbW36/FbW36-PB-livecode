@@ -83,7 +83,7 @@ console.log("slotsArrayPt4 ==> ", slotsArrayPt4); // [ '', 'Alex', <1 empty item
 // colors[2] = "black" // change the third item
 // colors[3] = "brown" //
 
-// let(var) vs const
+// let vs const
 // we can create a Variable with let and const
 // var works same as let
 let stringWithLet = "Tommy";
