@@ -34,14 +34,30 @@ const editTodo = (orderNumber, newValue) =>
   (toDosStore[orderNumber - 1] = newValue);
 
 /**
- * creat function to edit todos by passing array of todos order numbers
- *const updateTodos = (todosOrder, newTodosValus) => { your code }
+ * creat function to edit todos by passing array of todos order numbers 
+ * const updateTodos = (todosOrder, newTodosValus) => { your code }
  * @param   todosOrder array of items orders ==>  [2,4,6]
- * @param {*} newTodosValus  array of items new Values ==> ['Meet with PR department', 'By milk', 'Check the internet connection']
+ * @param {*} newTodosValus  array of new Values ==> ['Meet with PR department', 'By milk', 'Check the internet connection']
    call ==>  updateTodos([2,4,6], ['Meet with PR department', 'By milk', 'Check the internet connection'])
  */
-
-const updateTodos = (todosOrder, newTodosValus) => {};
+//const toDosStore = ["Shopping", "Home work", "Go to the gym"];
+const updateTodos = (todosOrder, newTodosValus) => {
+  // your code
+  for (let i = 0; i < newTodosValus.length; i++) {
+    /**
+     * todosOrder[i] - 1
+    target item index 1 >> new value ==> Meet with PR department
+    target item index 3 >> new value ==> By milk
+    target item index 5 >> new value ==> Check the internet connect
+     */
+    console.log(
+      `target item index ${todosOrder[i] - 1} >> new value ==> ${
+        newTodosValus[i]
+      }`
+    );
+    toDosStore[todosOrder[i] - 1] = newTodosValus[i];
+  }
+};
 
 //! read
 // RenderToDosListTemplate function
