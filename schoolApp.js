@@ -133,7 +133,7 @@ const createClass = (data) => {
 
 const createStudent = (data) => {
   /**
-   EX : { classID: 2, name: 'Sara', email: 'sara@yahoo.com', city: 'Berlin' }
+    EX : { classID: 2, name: 'Sara', email: 'sara@yahoo.com', city: 'Berlin' }
  */
   let classIndex = data.classID - 1;
   let newStudentObject = {
@@ -142,6 +142,38 @@ const createStudent = (data) => {
     city: data.city,
   };
   school[classIndex].students.push(newStudentObject);
+};
+
+//! remove
+// removeClass by ID
+const removeClass = (data) => {
+  let classIndex = data.classID - 1;
+  school.splice(classIndex, 1);
+};
+
+// removeStudent takes argument(object) holds class ID and the student ID
+const removeStudent = (data) => {
+  let classIndex = data.classID - 1;
+  let studentIndex = data.studentID - 1;
+  school[classIndex].students.splice(studentIndex, 1);
+};
+//!Edit
+// editStudent ==> info name, email and city.
+
+const editStudent = (data) => {
+  let classIndex = data.classID - 1;
+  let studentIndex = data.studentID - 1;
+  let targetStudent = school[classIndex].students[studentIndex];
+
+  if (data.name) {
+    targetStudent.name = data.name;
+  }
+  if (data.email) {
+    targetStudent.email = data.email;
+  }
+  if (data.city) {
+    targetStudent.city = data.city;
+  }
 };
 
 //! read
@@ -206,6 +238,16 @@ createStudent({
   name: "Ghassan",
   email: "ghassan@yahoo.com",
   city: "Berlin",
+});
+
+removeClass({ classID: 2 });
+removeStudent({ classID: 1, studentID: 2 });
+editStudent({
+  classID: 3,
+  studentID: 1,
+  email: "ghassan@test.de",
+  city: "Hamburg",
+  name: "Alex",
 });
 
 //--------------------
