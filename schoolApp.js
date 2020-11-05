@@ -105,8 +105,44 @@ const school = [
 ];
 //------------##############################-----------
 // App Functions
+
+// Functions arguments ==>  Passing one single  object as argument holds all the arguments.
 //! create class
+// createClass function takes argument(object) holds class name
+const createClass = (data) => {
+  console.log("createClass ==> ", data);
+  if (data && data.name) {
+    let classObject = {
+      name: data.name,
+      students: [],
+    };
+    school.push(classObject);
+  } else {
+    return console.log("The class name is Required!");
+  }
+};
 //! create student
+// function takes argument(object) holds class ID and the student data
+/**
+  {
+        name: "Pilar",
+        email: "pilar@yahoo.com",
+        city: "Berlin",
+  }
+ */
+
+const createStudent = (data) => {
+  /**
+   EX : { classID: 2, name: 'Sara', email: 'sara@yahoo.com', city: 'Berlin' }
+ */
+  let classIndex = data.classID - 1;
+  let newStudentObject = {
+    name: data.name,
+    email: data.email,
+    city: data.city,
+  };
+  school[classIndex].students.push(newStudentObject);
+};
 
 //! read
 // create function call RenderSchoolTemplate
@@ -157,6 +193,20 @@ const RenderSchoolTemplate = () => {
 
 //------------#########################-----------
 // Call Stack
+createClass({ name: "FbW4" });
+createStudent({
+  classID: 2,
+  name: "Sara",
+  email: "sara@yahoo.com",
+  city: "Berlin",
+});
+
+createStudent({
+  classID: 4,
+  name: "Ghassan",
+  email: "ghassan@yahoo.com",
+  city: "Berlin",
+});
 
 //--------------------
 // render school template
