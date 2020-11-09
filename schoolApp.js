@@ -183,6 +183,7 @@ const editStudent = (data) => {
 const RenderSchoolTemplate = () => {
   let template = "";
   template += "School Classes" + "\n";
+
   template += "--------------" + "\n";
   let totalStudents = 0;
   if (school.length < 1) {
