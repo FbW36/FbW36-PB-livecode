@@ -12,3 +12,8 @@ iterable: array
 
 
  */
+
+const users = [
+  { name: "Alex", email: "alex@yahoo.com" },
+  { name: "Max", email: "max@yahoo.com" },
+];
