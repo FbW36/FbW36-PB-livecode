@@ -258,23 +258,67 @@ console.log("oddNumbersObject ==> ", oddNumbersObject);
 const arrayToSort = [3, 1, 66];
 
 const sortedArray = arrayToSort.sort((test1, test2) => {
-  console.log("sortedArray ==>  test1 ==> ", test1);
-  console.log("sortedArray ==>  test2 ==> ", test2);
-
-  /**
-    sortedArray ==>  test1 ==>  1
-    sortedArray ==>  test2 ==>  3
-    sortedArray ==>  test1 ==>  66
-    sortedArray ==>  test2 ==>  1
-    sortedArray ==>  test1 ==>  66
-    sortedArray ==>  test2 ==>  1
-    sortedArray ==>  test1 ==>  66
-    sortedArray ==>  test2 ==>  3
-   */
-  // return test1 - test2; 0 - 99
   return test2 - test1; // 99 - 0
 });
 
 console.log("sortedArray ==> ", sortedArray);
+//---------------------###############---------------
 
-//
+//5. The forEach() method executes a provided function once for each array element.
+
+//! forEach() return nothing!
+// return Statement Inside forEach make no Sense
+
+const numbers_test = [1, 2, 99, 4, 5, 6, 7, 6];
+
+const even_box = [];
+const even_numbers_map = numbers_test.map((num) => {
+  if (num % 2 === 0) {
+    even_box.push(num);
+    return num;
+  }
+});
+
+/**
+ [
+  undefined,
+   2,
+  undefined,
+   4,
+  undefined,
+   6,
+  undefined,
+   6
+]
+ */
+console.log("even_numbers_map ==> ", even_numbers_map);
+console.log("even_box ==> ", even_box); // [ 2, 4, 6, 6 ]
+
+// forEach()
+const even_box_with_forEach = [];
+
+const even_numbers_forEach = numbers_test.forEach((num) => {
+  if (num % 2 === 0) {
+    even_box_with_forEach.push(num);
+  }
+});
+console.log("even_numbers_forEach ==> ", even_numbers_forEach); // undefined Because forEach return nothing
+console.log("even_box_with_forEach ==> ", even_box_with_forEach); // [ 2, 4, 6, 6 ]
+
+//--------#########------------
+
+//------------############---------------
+
+/*
+const INPUT_ARRAY = [
+  [['javascript','alex'], 2, 1],
+  [8, 11, {key1:'nextjs', key2:'nestjs'}, 4],
+  [7, , ['methods', 'task'], 27],
+  [7 , 28, 14],
+  [3, 10, 26, 7],
+  [{key1:'anguler'}, 4],
+];
+
+ //output ===> ['TPIRCSAVAJ', 'XELA','NEXTJS','NESTJS','SDOHTEM','KSAK','ANGULER']
+
+*/
