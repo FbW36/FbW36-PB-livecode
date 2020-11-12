@@ -1,4 +1,4 @@
-// Rest parameter, destructuring Objects and Arrays
+//  destructuring Objects and Arrays, Rest parameter
 
 /**
  Since ES2016, JavaScript syntax has supported creative ways of scoping variables within objects and arrays. These creative techniques are widely used among the React community. Let’s take a look at a few of them, including destructuring, object literal enhancement, and the spread operator.
@@ -16,6 +16,13 @@ const sandwich = {
   cheese: "swiss",
   toppings: ["lettuce", "tomato", "mustard"],
 };
+
+//const bread = sandwich.bread;
+//const meat = sandwich.meat;
+
+//const { bread, meat } = sandwich;
+
+//console.log(`bread: ${bread}, meat: ${meat}`); // bread: dutch crunch, meat: tuna
 //---------------############-------------
 //! destructuring clone the contents
 /**
@@ -32,6 +39,22 @@ console.log(bread); // garlic console.log(meat); // turkey
 console.log(sandwich.bread, sandwich.meat);
  */
 
+const sandwich2 = {
+  bread: "dutch crunch",
+  meat: "tuna",
+  cheese: "swiss",
+  toppings: ["lettuce", "tomato", "mustard"],
+};
+//const bread = sandwich.bread; ==> ref
+//const meat = sandwich.meat; ==> ref
+let { bread, meat } = sandwich2; // clone
+bread = "garlic";
+meat = "turkey";
+console.log("{ bread, meat } clone==> ", `bread: ${bread}, meat: ${meat}`);
+console.log(
+  " sandwich2 origin==> ",
+  `bread: ${sandwich2.bread}, meat: ${sandwich2.meat}`
+);
 //-------------------#########-----------
 
 /**
