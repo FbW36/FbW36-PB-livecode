@@ -55,9 +55,40 @@ const getItemAndIndex = ["Alex", "Jon", "Max"].map((item, idx) => {
 console.log("getItemAndIndex ==> ", getItemAndIndex);
 
 /**
- [
-  { name: 'Hallo Alex', index: 1 },
+  [
+  { name: 'Hallo Alex', index: 0 },
   { name: 'Hallo Jon', index: 1 },
-  { name: 'Hallo Max', index: 1 }
+  { name: 'Hallo Max', index: 2 }
 ]
+ */
+
+//-----------------########---------------
+
+const input_1_1_1 = ["test", "react", "alex", "javascript", "tommy"];
+const input_2_1 = ["test", "123", "react", "alex", "a", "javascript", "tommy"];
+const input_3_1 = ["test", "react", "jon", "alex", "javascript", "tommy"];
+
+function namesObject(arr) {
+  // your code
+  const box = {};
+  let counter = 1;
+  for (let item of arr) {
+    // box["name_" + counter++] = item;
+    item.length > 4 && (box["name_" + counter++] = item);
+  }
+
+  return box;
+}
+
+console.log("namesObject input_1_1_1==> ", namesObject(input_1_1_1));
+console.log("namesObject input_2_1==> ", namesObject(input_2_1));
+console.log("namesObject input_3_1==> ", namesObject(input_3_1));
+
+/**
+ {
+     name_1:'react',
+     name_2: 'javascript',
+     name_3: 'tommy',
+     ....
+ }
  */

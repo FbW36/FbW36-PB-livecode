@@ -310,15 +310,15 @@ console.log("even_box_with_forEach ==> ", even_box_with_forEach); // [ 2, 4, 6, 
 //------------############---------------
 
 /*
-const INPUT_ARRAY = [
+//! task
+const input = [
   [['javascript','alex'], 2, 1],
   [8, 11, {key1:'nextjs', key2:'nestjs'}, 4],
-  [7, , ['methods', 'task'], 27],
+  [7, ['methods', 'task'], 27],
   [7 , 28, 14],
   [3, 10, 26, 7],
   [{key1:'anguler'}, 4],
 ];
-
- //output ===> ['TPIRCSAVAJ', 'XELA','NEXTJS','NESTJS','SDOHTEM','KSAK','ANGULER']
+output ===> ['TPIRCSAVAJ', 'XELA','NEXTJS','NESTJS','SDOHTEM','KSAT','ANGULER']
 
 */
