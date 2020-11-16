@@ -20,6 +20,16 @@ class TodosListApp {
   editTodo(orderNumber, newValue) {
     this.toDosStore[orderNumber - 1] = newValue;
   }
+  updateTodos(todosOrder, newTodosValus) {
+    for (let i = 0; i < newTodosValus.length; i++) {
+      console.log(
+        `target item index ${todosOrder[i] - 1} >> new value ==> ${
+          newTodosValus[i]
+        }`
+      );
+      this.toDosStore[todosOrder[i] - 1] = newTodosValus[i];
+    }
+  }
 
   RenderToDosListTemplate() {
     if (this.toDosStore.length < 1) {
@@ -53,6 +63,11 @@ todoseListApp.createTodos([
   "Meet with Ghassan",
   "New test",
 ]);
+
+todoseListApp.updateTodos(
+  [2, 4, 6],
+  ["Meet with PR department", "By milk", "Check the internet connection"]
+);
 
 //--------------------
 // render to do template
