@@ -9,6 +9,17 @@ class TodosListApp {
   insertTodo(newTodo) {
     this.toDosStore.push(newTodo);
   }
+  createTodos(todos) {
+    todos.map((item) => this.toDosStore.push(item));
+  }
+
+  removeTodo(orderNumber) {
+    this.toDosStore.splice(orderNumber - 1, 1);
+  }
+
+  editTodo(orderNumber, newValue) {
+    this.toDosStore[orderNumber - 1] = newValue;
+  }
 
   RenderToDosListTemplate() {
     if (this.toDosStore.length < 1) {
@@ -32,6 +43,16 @@ todoseListApp.insertTodo("test1");
 todoseListApp.insertTodo("test2");
 todoseListApp.insertTodo("test4");
 todoseListApp.insertTodo("test5");
+todoseListApp.removeTodo(5);
+todoseListApp.removeTodo(2);
+todoseListApp.insertTodo("Call Alex");
+todoseListApp.editTodo(3, "Pay bills");
+todoseListApp.editTodo(5, "Visiting Tommy");
+todoseListApp.createTodos([
+  "Go to supermarket",
+  "Meet with Ghassan",
+  "New test",
+]);
 
 //--------------------
 // render to do template
