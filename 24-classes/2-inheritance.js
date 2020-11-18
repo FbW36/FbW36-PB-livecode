@@ -54,12 +54,23 @@ class ProductsControls extends ViewProducts {
     super(productsInit);
   }
 
-  insertProduct(newProduct) {
+  insertProduct({ title, price }) {
     // fix the id
-    console.log("the new product added", this.products);
+    const newProduct = {
+      title,
+      price,
+      id: this.products.length,
+    };
+    // clone products array
+    const cloneProduct = [...this.products, newProduct];
+    this.products = cloneProduct;
   }
 }
 
 const productsData = new ProductsControls(productsInit);
 
-productsData.insertProduct({ title: "", price: 2 });
+productsData.insertProduct({ title: "BlissLights Sky Lite", price: 49 });
+
+// render views
+console.log(productsData.renderProducts());
+console.log(productsData.renderTotalPrice());
