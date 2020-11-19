@@ -65,6 +65,10 @@ class ProductsControls extends ViewProducts {
     const cloneProduct = [...this.products, newProduct];
     this.products = cloneProduct;
   }
+  
+  // edit product
+
+  // remove product
 }
 
 const productsData = new ProductsControls(productsInit);
