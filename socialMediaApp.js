@@ -1,9 +1,34 @@
 const posts= [
-
+{
+    post: "Treffen",
+    comment: "Passt vllt heute?"
+},
+{
+    post: "Chillen",
+    comment: "Lass mal trinken gehen!"
+}
 ]
 
 // read
+class App {
+constructor(posts){
+    this.ideas = posts
+}
 
+renderPosts(){
+    let template = "";
+    this.ideas.map((myPost)=>{
+        template += `Post: ${myPost.post} Comment: ${myPost.comment} \n`
+    })
+    return template;
+}
+}
+const myApp = new App
+console.log(myApp.renderPosts())
+
+
+
+}
 
 //create
 //1- post
